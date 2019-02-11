@@ -30,18 +30,9 @@ caluculateAttendance(){
         return '${attendancePercentage.toFixed(2)}%';
     }else{
         return '0%';
-    }
-
-        
-    }
+    }    
+   }
 }
-
-// TODO: Create another method on the `Student` class called `calculateAttendance`.
-// This method should give a percentage of how many days the student was present.
-// It should return a string like "90%" or "84.732%". Attendance should be
-// recorded into an Array using either a `0` for "absent" or a `1` for "present".
-// This should allow attendance percentage to be calculated as the average of
-// all the items in the `attendance` Array.
 
 
 // TODO: Create another class that extends the `Person` class called `Teacher`.
@@ -79,6 +70,12 @@ class course {
     // information required to create a `Teacher` object (`name`, `email`) and
     // does so, then sets the `this.teacher` property equal to the new `Teacher` object.
 
+setTeacher(){
+    let name= prompt("Enter full teacher name:","Shawn Rider");
+    let email= prompt("Enter teacher email:","riders@seattleu.edu");
+    let honorific= prompt("Enter honorific:","prof");
+    this.teacher=newTeacher
+}
 
     /////////////////////////////////////////
     // TODO: ADD `markAttendance()` method /////////////////////////////////////
