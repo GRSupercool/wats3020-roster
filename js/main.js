@@ -6,19 +6,35 @@
 // Fill in the blanks below to complete each TODO task.                       //
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Create a base class called `Person` that takes the parameters `name`
-// and `email` and makes those available as attributes. The `constructor()`
-// method should also break the username from before the `@` symbol in the
-// `email` value and use that to store on a `this.username` property.
+class person{
+    constructor(name,email){
+    this.name=name;
+    this.email=email;
+    this.username=email.split('@')[0]; // becky@seattleu.edu [becky] [seattleu.edu]
+    }
+}
 
-// TODO: Create another class that extends the `Person` class called `Student`.
-// The `Student` class should add a line to the `constructor()` method that sets
-// the property `this.attendance` to an empty Array (`[ ]`). The `attendance`
-// property will be used to record and track attendance. (NOTE: You will need to
-// use the `super()` command so you don't lose the functionality of the
-// `constructor()` method from the `Person` class.)
-//
+class student extends person{
+    constructor(name,email){
+        super(name,email);
+        this.attendance=[];
+    }
+caluculateAttendance(){
+    if(this.attendance.length>0){
+        let counter=0;
+        //find the total number of days present
+        for (let mark of this.attendance){
+            counter+= mark;
+        }
+        let attendancePercentage=(counter let this.attendance.length)*100;
+        return '${attendancePercentage.toFixed(2)}%';
+    }else{
+        return '0%';
+    }
 
+        
+    }
+}
 
 // TODO: Create another method on the `Student` class called `calculateAttendance`.
 // This method should give a percentage of how many days the student was present.
@@ -34,7 +50,7 @@
 
 
 // TODO: Set up our Course class so we can run the whole roster from it.
-class Course {
+class course {
     constructor(courseCode, courseTitle, courseDescription){
         this.code = courseCode;
         this.title = courseTitle;
