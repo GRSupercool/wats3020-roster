@@ -74,7 +74,7 @@ setTeacher(){
     let name= prompt("Enter full teacher name:","Shawn Rider");
     let email= prompt("Enter teacher email:","riders@seattleu.edu");
     let honorific= prompt("Enter honorific:","prof");
-    this.teacher=newTeacher
+    this.teacher=newTeacher (name,email,honorific);
 }
 
     /////////////////////////////////////////
