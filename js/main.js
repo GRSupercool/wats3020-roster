@@ -19,25 +19,33 @@ class student extends person{
         super(name,email);
         this.attendance=[];
     }
-caluculateAttendance(){
+calculateAttendance(){
     if(this.attendance.length>0){
         let counter=0;
         //find the total number of days present
         for (let mark of this.attendance){
             counter+= mark;
         }
-        let attendancePercentage=(counter let this.attendance.length)*100;
+        let attendancePercentage=(counter/ this.attendance.length)*100;
         return '${attendancePercentage.toFixed(2)}%';
-    }else{
+    } else {
         return '0%';
     }    
-   }
+  }
 }
 
 
-// TODO: Create another class that extends the `Person` class called `Teacher`.
-// The `Teacher` class should add a property called `this.honorific` (supplied
-// when an instance of `Teacher` is created).
+
+
+class Teacher extends Person{
+    contructor(name,email,honorific){
+        super(name,email);
+        this.honorofic=honorific;
+    }
+}
+
+
+
 
 
 // TODO: Set up our Course class so we can run the whole roster from it.
