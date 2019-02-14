@@ -36,7 +36,6 @@ class Teacher extends Person{
     }
 }
 
-
 class course {
     constructor(courseCode, courseTitle, courseDescription){
         this.code = courseCode;
@@ -90,21 +89,16 @@ markAttendance(username,status= "present"){
     }
 }
 
-/////////////////////////////////////////
-// TODO: Prompt User for Course Info  //////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//
-// Prompt the user for information to create the Course. In order to create a
-// `Course` object, you must gather the following information:
-//
-// TODO: Prompt the user for the `courseCode` (the number/code of the course, like "WATS 3000").
 
-// TODO: Prompt the user for the `courseTitle` (the name of the course, like "Introduction to JavaScript").
+let courseCode=prompt("Enter coursecode:"," WATS 3020");
 
-// TODO: Prompt the user for the  `courseDescription` (the descriptive summary of the course).
 
-// Create a new `Course` object instance called `myCourse` using the three data points just collected from the user.
-// TODO: Add in the values for the information supplied by the user above.
+let courseTitle=prompt("Enter courseTitle:"," Introduction to JavaScript");
+
+
+let courseDescription= prompt("Enter courseDescription:"," learning to code JS");
+
+let myCourse= new Course("CourseCode, courseTitle, courseDescription");
 
 
 ///////////////////////////////////////////////////
