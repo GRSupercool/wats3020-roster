@@ -1,10 +1,5 @@
 /* JS for WATS 3020 Roster Project */
 
-///////////////////////////////////////////////////
-//////// TODOs ///////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-// Fill in the blanks below to complete each TODO task.                       //
-////////////////////////////////////////////////////////////////////////////////
 
 class person{
     constructor(name,email){
@@ -34,9 +29,6 @@ calculateAttendance(){
   }
 }
 
-
-
-
 class Teacher extends Person{
     contructor(name,email,honorific){
         super(name,email);
@@ -45,10 +37,6 @@ class Teacher extends Person{
 }
 
 
-
-
-
-// TODO: Set up our Course class so we can run the whole roster from it.
 class course {
     constructor(courseCode, courseTitle, courseDescription){
         this.code = courseCode;
@@ -67,14 +55,6 @@ this.student.push(newStudent);
 updateRoster(this);
 }
 
-    /////////////////////////////////////////
-    // TODO: ADD the `setTeacher()` method /////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    //
-    // Create a method called `setTeacher()` that prompts the user for the
-    // information required to create a `Teacher` object (`name`, `email`) and
-    // does so, then sets the `this.teacher` property equal to the new `Teacher` object.
-
 setTeacher(){
     let name= prompt("Enter full teacher name:","Shawn Rider");
     let email= prompt("Enter teacher email:","riders@seattleu.edu");
@@ -83,26 +63,17 @@ setTeacher(){
     updateRoster(this);
 }
 
-    /////////////////////////////////////////
-    // TODO: ADD `markAttendance()` method /////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    //
-    // TODO: Create a method to mark a student's attendance called `markAttendance()`.
-    // This method should accept a parameter called `username` containing the
-    // `username` that will match the `username` property on the `Student` object.
 
-    // TODO: The FIRST step to create a functioning `markAttendance()` method is
-    // to retreive the `Student` object out of the `this.students` Array. You
-    // can use the `this.findStudent()` method (provided below) to accomplish
-    // that goal. Note that you will also have to handle two cases: The default
-    // behavior should be to mark the student present. The alternate behavior
-    // should be to mark the student absent.
-
-    // TODO: Now that we have retrieved the specific `Student` object we want
-    // to work with, we can use the appropriate method on the `Student` object
-    // to record the attendance.
-
-
+markAttendance(username,status= "present"){
+    let foundStudent=this.findStudent(username);
+    if(status=== "present"){
+        foundStudent.Attendance.push(1);
+    }else{
+        foundStudent.Attendance.push(0);
+    }
+    updateRoster(this);
+    
+}
 
     //////////////////////////////////////////////
     // Methods provided for you -- DO NOT EDIT /////////////////////////////////
